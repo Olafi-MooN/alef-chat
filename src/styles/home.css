@@ -1,0 +1,47 @@
+.container-home { 
+  display: grid;
+  grid-template-areas: "l" "r";
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 100%;
+  height: 100vh;
+}
+
+.content-users{ 
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid var(--bg-color-sub);
+  padding: 32px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.users-title { 
+  color: var(--white);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin: 0 0 30px 0;
+  pointer-events: none;
+}
+
+.content-users-list { 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-content-users { 
+  display: flex;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--bg-color-sub);
+  transition: all ease-in 0.3s;
+}
+
+.profile-content-users.selected { 
+  background-color: var(--green-dark);
+
+}
+
+.profile-content-users:hover { 
+  filter: brightness(.9);
+}

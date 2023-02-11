@@ -2,17 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getDatabase, ref, set, get, child, onValue } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
 import { } from "https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyA2qBJrpM-KMBz4AneEyXEjI7wOc_kKLEs",
-  authDomain: "chat-teste-72801.firebaseapp.com",
-  databaseURL: "https://chat-teste-72801-default-rtdb.firebaseio.com",
-  projectId: "chat-teste-72801",
-  storageBucket: "chat-teste-72801.appspot.com",
-  messagingSenderId: "634268036773",
-  appId: "1:634268036773:web:bdb02cde5ec0cdfc07e74c",
-  measurementId: "G-446DTT7Q9Z"
-};
+import { firebaseConfig } from "../../env.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);

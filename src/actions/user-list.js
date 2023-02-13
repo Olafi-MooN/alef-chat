@@ -16,7 +16,8 @@ const getUserFirebase = async (callback) => {
   // Pegar usuarios do firebase
   const listUsersFirebase = await getUserList('users')
   const listUsers = document.querySelector('.content-users-list');
-  listUsers.innerHTML = listUsersFirebase?.list?.filter(x => x?.uuid !== actualUser()?.uuid).map((user) => ProfileList(user)).join('');
+  const filtered = listUsersFirebase?.list?.filter(x => x?.uuid !== actualUser()?.uuid).map((user) => ProfileList(user)).join('');
+  listUsers.innerHTML = filtered;
   if (callback) callback();
 };
 
@@ -38,7 +39,7 @@ const selectUserList = (removeSelected) => {
       userSelectedChat(datasetUser);
 
       searchMessages('chat/' + cryptoPathRelation);
-      // console.log(messages);
+
       buttonActionSendMessage(cryptoPathRelation, actualUser());
       keyEnterActionSendMessage(cryptoPathRelation, actualUser())
 
